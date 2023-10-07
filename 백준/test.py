@@ -1,11 +1,24 @@
-x = input()
-y = input()
+dx = [1,-1,0,0,]
+dy = [0,0,1,-1]
 
-dp = [[0] * (len(y)+1) for _ in range(len(x)+1)]
+def bfs(x,y):
+    global result
+    q = set()
+    q.add((x,y,array[x][y]))
+    while q:
+        a,b,c = q.pop()
+        result = max(len(c),result)
+        for i in range(4):
+            nx = a+dx[i]
+            ny = b+dy[i]
+            if 0<=nx<r and 0<=ny<c and array[nx][ny] not in c:
+                
 
-for i in range(1, len(x)+1):
-    for j in range(1, len(y)+1):
-        if x[i-1] == y[j-1]:
-            dp[i][j] = dp[i-1][j-1]+1
-        else:
-            dp[i][j]
+r,c = map(int,input().split())
+array = []
+for _ in range(r):
+    array.append(input())
+
+result = 0
+bfs(0,0)
+print(result)

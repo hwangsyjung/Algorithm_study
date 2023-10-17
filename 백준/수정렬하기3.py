@@ -2,7 +2,7 @@
 import sys
 input = int(sys.stdin.readline())
 array = [0]*10001
-for i in range(n):
+for i in range(input):
     data = int(sys.stdin.readline())
     array[data]+=1
 for i in range(10001):
